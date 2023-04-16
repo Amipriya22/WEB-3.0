@@ -36,10 +36,10 @@ class Car():
         if self.detect_collision(car2):
             return None
 
-        angle_diff = abs(math.atan2(*np.cross(self.velocity, car2.velocity)) % (math.pi))
+        angle_diff = abs(m.atan2(*np.cross(self.velocity, car2.velocity)) % (m.pi))
 
 
-        if angle_diff == 0 or angle_diff == math.pi:
+        if angle_diff == 0 or angle_diff == m.pi:
             return None  # no time to collision
 
         a = (self.velocity[0] - car2.velocity[0]) ** 2 + (self.velocity[1] - car2.velocity[1]) ** 2
@@ -51,7 +51,7 @@ class Car():
         if discriminant < 0:
             return None
         else:
-            sqrt_discriminant = math.sqrt(discriminant)
+            sqrt_discriminant = m.sqrt(discriminant)
             t1 = (-b + sqrt_discriminant) / (2 * a)
             t2 = (-b - sqrt_discriminant) / (2 * a)
             if t1 > 0:
